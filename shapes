@@ -1,0 +1,46 @@
+// shapes
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Shape
+{ 
+protected: float wid,hei;
+public: 
+    void set_value(float w, float h)
+    { 
+        wid=w;
+        hei=h;
+    }
+};
+
+class Triangle: public Shape
+{
+    public:
+    float area ()
+    {
+        return (wid*hei/2);
+    }
+};
+
+class Rectangle: public Shape
+{
+    public: 
+    float area()
+    {
+        return (wid*hei);
+    }
+};
+
+int main()
+{
+    Rectangle R;
+    Triangle T;
+    T.set_value (10,5);
+    R.set_value (10,2);
+    cout << T.area() << endl;
+    cout << R.area() << endl;
+    return 0;
+}
+
