@@ -1,0 +1,52 @@
+// animals
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+class Animal
+{ 
+protected: int age; char name[15];
+public: 
+    void set_data(int a, char n[15])
+    { 
+        age=a;
+        strcpy(n,name);
+    }
+};
+
+class Dog: public Animal
+{
+    public:
+    void message_dog ()
+    {
+        cout<<"Dog " <<name<<" is " <<age <<" years old. He a good boi.";
+    }
+};
+
+class Cat: public Animal
+{
+    public: 
+    void message_cat()
+    {
+        cout<<"Cat " <<name<<" is " <<age <<" years old. He not a good boi.";
+    }
+};
+
+int main()
+{
+    Dog d;
+    Cat c;
+    char name_dog[15]="Gałgan";
+    char name_cat[15]="Zajonc";
+    
+    d.set_data(2,name_dog);
+    c.set_data(10,name_cat);
+    
+    d.message_dog();
+    cout << endl;
+    c.message_cat();
+    
+    return 0;
+}
+
